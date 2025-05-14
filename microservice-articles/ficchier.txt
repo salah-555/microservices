@@ -1,0 +1,13 @@
+
+
+1/ Service Articles reçoit la requête.
+
+2/ Il utilise le middleware pour envoyer le token au Service Users.
+
+3/ Service Users vérifie si le token est valide ou non.
+
+4/ Si valide ➔ la création d'article continue.
+
+6/ Si invalide ➔ retour d'une erreur 401.
+
+ Client ---> Service Articles (avec token) ---> (appelle Service Users pour vérifier) ---> OK/Not OK
