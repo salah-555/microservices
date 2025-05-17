@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  microservice-article:
+    build: ./microservice-articles
+    container_name: comp-articles-app
+    ports: 
+      - "5001:5001"
+    depends_on:
+      - mongo
+
+  microservice-users:
+    build: ./microservice-users
+    container_name: comp-users-app
+    ports:
+      - "5002:5002"
+    depends_on:
+      - mongo
+    
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
